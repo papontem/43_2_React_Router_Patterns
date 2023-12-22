@@ -7,11 +7,13 @@ import "./NavBar.css"
 function NavBar() {
   return (
     <nav className="NavBar">
-      <NavLink exact to="/">Home</NavLink>
+      <NavLink exact to="/dogs">Dogs</NavLink>
+      
+      {/* <NavLink exact to="/">Home</NavLink>
       <NavLink exact to="/about">About Us</NavLink>
       <NavLink exact to="/contact">Contact</NavLink>
       <NavLink exact to="/blog">Blog</NavLink>
-      <NavLink exact to="/blargh">Broken Link</NavLink>
+      <NavLink exact to="/blargh">Broken Link</NavLink> */}
     </nav>
   );
 }

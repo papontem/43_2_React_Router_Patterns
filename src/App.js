@@ -12,21 +12,22 @@ import { BrowserRouter } from "react-router-dom";
 
 function App(props) {
   const {dogs} = props;
-  console.log("Dogs",dogs);
+  // console.log("Dogs:",dogs);
 	return (
 		<div>
 			<BrowserRouter>
 				<NavBar />
-				<Routes />
+				<Routes dogs={dogs} />
 			</BrowserRouter>
-      <img src={dogs[0].imgSrc} alt="doggy photograpgh"/>
+
+      {/* <img src={dogs[2].imgSrc} alt="doggy photograpgh"/> */}
       
 		</div>
 	);
 }
 
-// PART 1
-// - /dogs is the homepage and shows all three dogs
+// PART 1 complete
+// - /dogs is the homepage and shows all FOUR* dogs
 // - Clicking on a dog from the homepage takes you to that dog’s route. 
 //    For example, clicking on Whiskey will take you to /dogs/whiskey.
 // - every other endpoint not listed should redirect you to /dogs. 

@@ -3,15 +3,24 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Home";
+import Dogs from "./Dogs"
 import About from "./About";
 import Contact from "./Contact";
 import BlogHome from "./BlogHome";
 import Post from "./Post";
 
-function Routes() {
+function Routes(props) {
+	const {dogs} = props;
+	// console.log(dogs);
 	return (
 		<Switch>
-			<Route exact path="/about">
+			<Route exact path="/dogs">
+				<Dogs dogs={dogs}/>
+			</Route>
+			<Route exact path="/dogs/:dogName">
+				<Dogs dogs={dogs}/>
+			</Route>
+			{/* <Route exact path="/about">
 				<About />
 			</Route>
 			<Route exact path="/contact">
@@ -25,8 +34,8 @@ function Routes() {
 			</Route>
 			<Route exact path="/">
 				<Home />
-			</Route>
-			<Redirect to="/" />
+			</Route> */}
+			<Redirect to="/dogs" />
 		</Switch>
 	);
 }
