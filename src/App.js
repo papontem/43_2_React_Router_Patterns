@@ -7,6 +7,7 @@ import Routes from "./routes/Routes";
 // import RoutesNo404 from "./routes/RoutesNo404";
 // import RoutesNoSwitch from "./routes/RoutesNoSwitch";
 import { BrowserRouter } from "react-router-dom";
+
 // import {} from "";
 
 function App(props) {
@@ -18,17 +19,24 @@ function App(props) {
 				<NavBar />
 				<Routes />
 			</BrowserRouter>
+      <img src={dogs[0].imgSrc} alt="doggy photograpgh"/>
+      
 		</div>
 	);
 }
 
+// PART 1
+// - /dogs is the homepage and shows all three dogs
+// - Clicking on a dog from the homepage takes you to that dog’s route. 
+//    For example, clicking on Whiskey will take you to /dogs/whiskey.
+// - every other endpoint not listed should redirect you to /dogs. 
 // Exercise provided default props
 App.defaultProps = {
   dogs: [
     {
       name: "Whiskey",
       age: 5,
-      src: "whiskey",
+      imgSrc: "doggy_pics/whiskey.jpg",
       facts: [
         "Whiskey loves eating popcorn.",
         "Whiskey is a terrible guard dog.",
@@ -38,7 +46,7 @@ App.defaultProps = {
     {
       name: "Duke",
       age: 3,
-      src: "duke",
+      imgSrc: "doggy_pics/duke.jpg",
       facts: [
         "Duke believes that ball is life.",
         "Duke likes snow.",
@@ -48,7 +56,7 @@ App.defaultProps = {
     {
       name: "Perry",
       age: 4,
-      src: "perry",
+      imgSrc: "doggy_pics/perry.jpg",
       facts: [
         "Perry loves all humans.",
         "Perry demolishes all snacks.",
@@ -58,7 +66,7 @@ App.defaultProps = {
     {
       name: "Tubby",
       age: 4,
-      src: "tubby",
+      imgSrc: "doggy_pics/tubby.jpg",
       facts: [
         "Tubby is really stupid.",
         "Tubby does not like walks.",
