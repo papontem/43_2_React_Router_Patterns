@@ -3,10 +3,10 @@
 import React from "react";
 import NavBar from "./navbar/NavBar";
 import Routes from "./routes/Routes";
-// import Routes404 from "./routes/Routes404";
-// import RoutesNo404 from "./routes/RoutesNo404";
-// import RoutesNoSwitch from "./routes/RoutesNoSwitch";
 import { BrowserRouter } from "react-router-dom";
+// import Routes404 from "./routes/helpfull_code/Routes404";
+// import RoutesNo404 from "./routes/helpfull_code/RoutesNo404";
+// import RoutesNoSwitch from "./routes/helpfull_code/RoutesNoSwitch";
 
 // import {} from "";
 
@@ -23,7 +23,7 @@ function App(props) {
 	);
 }
 
-// PART 1 complete
+// PART 1 complete complete
 // - /dogs is the homepage and shows all FOUR* dogs
 // - Clicking on a dog from the homepage takes you to that dog’s route. 
 //    For example, clicking on Whiskey will take you to /dogs/whiskey.
