@@ -1,28 +1,41 @@
 // ColorList.js
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ColorList(props) {
 	const { colors } = props;
 	console.log("ColorList:", colors);
 
-	const { colorName } = useParams();
-	console.log("Viewing Color:", colorName);
-
-	// Find the dog object that matches the colorName parameter
-	const selectedColor = colors.find((color) => color.name.toLowerCase() === colorName);
-	console.log("selected Color:", selectedColor);
+	const handleColorChange = () => {};
+	const handleColorSubmit = () => {};
 	return (
-		<div className="ColorList">
-			<h1>ColorList Homepage</h1>
-			<ul>
-				{colors.map((color) => (
-					<li key={color.name}>
-						<Link exact to={`/colors/${color.name.toLowerCase()}`}>
-							{color.name.toLowerCase()}
-						</Link>
-					</li>
-				))}
-			</ul>
+		<div className="Colors-Wrapper">
+			<h1>Colors Homepage</h1>
+			<div className="ColorForm">
+				<h2>Color Form:</h2>
+				<form>
+					<label className="ColorForm-Label">
+						Select Color:
+						<input
+							className="ColorForm-Input"
+							type="color"
+							onChange={handleColorChange}
+						/>
+					</label>
+					<button onClick={handleColorSubmit}> Add Color</button>
+				</form>
+			</div>
+			<div className="ColorList">
+				<h2>Color List:</h2>
+				<ul className="ColorList-list">
+					{colors.map((color) => (
+						<li key={color.name}>
+							<Link exact to={`/colors/${color.name.toLowerCase()}`}>
+								{color.name}
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }

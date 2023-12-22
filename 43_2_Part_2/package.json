@@ -6,11 +6,11 @@
 		"@testing-library/jest-dom": "*",
 		"@testing-library/react": "*",
 		"@testing-library/user-event": "*",
+		"axios": "*",
 		"react": "*",
 		"react-dom": "*",
 		"react-router-dom": "5.2.1",
-		"react-scripts": "*",
-		"axios": "*"
+		"react-scripts": "*"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -32,5 +32,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"@types/react-router-dom": "^5.3.3"
 	}
 }

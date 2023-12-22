@@ -9,7 +9,7 @@ function Color(props) {
 	const { colorName } = useParams();
 	console.log("Viewing Color:", colorName);
 
-	// Find the dog object that matches the colorName parameter
+	// Find the color object that matches the colorName parameter
 	const selectedColor = colors.find((color) => color.name.toLowerCase() === colorName);
 	console.log("selected Color:", selectedColor);
 	return (
@@ -20,6 +20,7 @@ function Color(props) {
 }
 
 export default Color;
+
 // function DogDetails(props) {
 // 	const { dogs } = props;
 // 	console.log("Dogs:", dogs);
