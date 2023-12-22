@@ -18,10 +18,7 @@ function App(props) {
 			<BrowserRouter>
 				<NavBar />
 				<Routes dogs={dogs} />
-			</BrowserRouter>
-
-      {/* <img src={dogs[2].imgSrc} alt="doggy photograpgh"/> */}
-      
+			</BrowserRouter>      
 		</div>
 	);
 }
