@@ -1,6 +1,7 @@
-// DogDetails.js
-import { useParams } from "react-router-dom";
-function DogDetails(props) {
+// Dogs.js
+import { Link, useParams } from "react-router-dom";
+
+function Dogs(props) {
 	const { dogs } = props;
 	console.log("Dogs:", dogs);
 
@@ -11,17 +12,19 @@ function DogDetails(props) {
 	const selectedDog = dogs.find((dog) => dog.name.toLowerCase() === dogName);
 	console.log("selected Dog:", selectedDog);
 	return (
-		<div>
-			<h2>{selectedDog.name}</h2>
-			<p>Age: {selectedDog.age}</p>
-			<img src={`/${selectedDog.imgSrc}`} alt={selectedDog.name} />
+		<div className="Dogs">
+			<h1>Dogs Homepage</h1>
 			<ul>
-				{selectedDog.facts.map((fact, index) => (
-					<li key={index}>{fact}</li>
+				{dogs.map((dog) => (
+					<li key={dog.name}>
+						<Link exact to={`/dogs/${dog.name.toLowerCase()}`}>
+							{dog.name.toLowerCase()}
+						</Link>
+					</li>
 				))}
 			</ul>
 		</div>
 	);
 }
 
-export default DogDetails;
+export default Dogs;

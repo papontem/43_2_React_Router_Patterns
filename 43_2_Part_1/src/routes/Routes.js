@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Dogs from "./part1_dogs/Dogs"
-import DogDetails from "./part1_dogs/DogDetails"
+import Dogs from "./Dogs"
+import DogDetails from "./DogDetails"
 // import Home from "./Home";
 // import About from "./About";
 // import Contact from "./Contact";
