@@ -4,7 +4,7 @@ import "./Color.css";
 
 function Color(props) {
 	const { colors } = props;
-	console.log("ColorList:", colors);
+	console.log("Color:", colors);
 
 	const { colorName } = useParams();
 	console.log("Viewing Color:", colorName);

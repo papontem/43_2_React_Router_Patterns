@@ -2,32 +2,19 @@
 import { Link } from "react-router-dom";
 
 function ColorList(props) {
-	const { colors } = props;
-	console.log("ColorList:", colors);
+	const { colorList } = props;
+	console.log("Color List:", colorList);
 
-	const handleColorChange = () => {};
-	const handleColorSubmit = () => {};
+
+	let reversedColorList = [...colorList].reverse()
 	return (
 		<div className="Colors-Wrapper">
 			<h1>Colors Homepage</h1>
-			<div className="ColorForm">
-				<h2>Color Form:</h2>
-				<form>
-					<label className="ColorForm-Label">
-						Select Color:
-						<input
-							className="ColorForm-Input"
-							type="color"
-							onChange={handleColorChange}
-						/>
-					</label>
-					<button onClick={handleColorSubmit}> Add Color</button>
-				</form>
-			</div>
+			<Link exact to="/colors/new">Add a new Color</Link>
 			<div className="ColorList">
 				<h2>Color List:</h2>
 				<ul className="ColorList-list">
-					{colors.map((color) => (
+					{reversedColorList.map((color) => (
 						<li key={color.name}>
 							<Link exact to={`/colors/${color.name.toLowerCase()}`}>
 								{color.name}

@@ -4,16 +4,20 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import ColorList from "./ColorList";
 import Color from "./Color";
+import NewColorForm from "./NewColorForm";
 
 function Routes(props) {
-	const { colors } = props;
+	const { colorList,addColor } = props;
 	return (
 		<Switch>
 			<Route exact path="/colors">
-				<ColorList colors={colors} />
+				<ColorList colorList={colorList} />
+			</Route>
+			<Route exact path="/colors/new">
+				<NewColorForm colorList={colorList} addColor={addColor}/>
 			</Route>
 			<Route exact path="/colors/:colorName">
-				<Color colors={colors}/>
+				<Color colorList={colorList}/>
 			</Route>
 			<Redirect to="/colors" />
 		</Switch>
