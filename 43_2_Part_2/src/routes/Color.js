@@ -3,18 +3,19 @@ import { useParams } from "react-router-dom";
 import "./Color.css";
 
 function Color(props) {
-	const { colors } = props;
-	console.log("Color:", colors);
+	const { colorList } = props;
+	console.log("Color List:", colorList);
 
 	const { colorName } = useParams();
 	console.log("Viewing Color:", colorName);
 
 	// Find the color object that matches the colorName parameter
-	const selectedColor = colors.find((color) => color.name.toLowerCase() === colorName);
+	const selectedColor = colorList.find((color) => color.name.toLowerCase() === colorName);
 	console.log("selected Color:", selectedColor);
 	return (
-		<div className="Color">
-			<h2>{selectedColor.name}</h2>
+		<div className="Color-Wrapper" >
+			<h2 className="Color-Name">{selectedColor.name}</h2>
+			<div className="Color" style={{backgroundColor:selectedColor.hexVal}}></div>
 		</div>
 	);
 }

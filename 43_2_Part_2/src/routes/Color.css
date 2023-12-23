@@ -1,6 +1,6 @@
-.DogDetails{
+.Color{
     text-align: center;
 }
-.DogDetails img {
-    width: 50dvw;
+.Color {
+    height: 100dvh;
 }

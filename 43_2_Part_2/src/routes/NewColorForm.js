@@ -5,13 +5,13 @@ import { useHistory } from "react-router-dom";
 // component to display form to add a new color to colors list
 function NewColorForm(props) {
 	const { colorList } = props;
-	console.log("Color List:", colorList);
+	// console.log("Color List:", colorList);
 
 	const { addColor } = props;
 	// console.log("addColor:", addColor);
 
     const history = useHistory()
-    console.log("history:", history);
+    // console.log("history:", history);
 
 	// State for form data
 	// width, height, and background color for a new box.
