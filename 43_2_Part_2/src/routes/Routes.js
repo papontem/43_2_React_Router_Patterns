@@ -7,17 +7,36 @@ import Color from "./Color";
 import NewColorForm from "./NewColorForm";
 
 function Routes(props) {
-	const { colorList,addColor } = props;
+	const { colorList, addColor } = props;
+	console.log("In Routes, Color List:", colorList);
+
+	/* Step 5, As a user, if I try to navigate to a color page that does not exist (eg, /colors/blargh), I am redirected to the colors index page. */
+	// created a callback to check for me if color is real
+	const colorExists = (colorName) => {
+		// check if the color exists in the colorList
+		return colorList.some((color) => color.name === colorName);
+	  };
+
 	return (
 		<Switch>
 			<Route exact path="/colors">
 				<ColorList colorList={colorList} />
 			</Route>
 			<Route exact path="/colors/new">
-				<NewColorForm colorList={colorList} addColor={addColor}/>
+				<NewColorForm colorList={colorList} addColor={addColor} />
 			</Route>
+
 			<Route exact path="/colors/:colorName">
-				<Color colorList={colorList}/>
+				{({ match }) => {
+					const { colorName } = match.params;
+
+					// check if the colorName param exists in our coloList and if it does not redirect to colors
+					if (!colorExists(colorName)) {
+						return <Redirect to="/colors" />;
+					}
+					// else render the color
+					return <Color colorList={colorList} />;
+				}}
 			</Route>
 			<Redirect to="/colors" />
 		</Switch>

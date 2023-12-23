@@ -1,17 +1,26 @@
 // Color.js
-import { useParams } from "react-router-dom";
+import { useParams  } from "react-router-dom";
+// import { useParams, useHistory } from "react-router-dom";
+
 import "./Color.css";
 
 function Color(props) {
 	const { colorList } = props;
-	console.log("Color List:", colorList);
+	// console.log("Color List:", colorList);
 
 	const { colorName } = useParams();
-	console.log("Viewing Color:", colorName);
+	// console.log("Viewing Color:", colorName);
 
+	
 	// Find the color object that matches the colorName parameter
 	const selectedColor = colorList.find((color) => color.name.toLowerCase() === colorName);
-	console.log("selected Color:", selectedColor);
+	// console.log("selected Color:", selectedColor);
+	
+	// Step 5, As a user, if I try to navigate to a color page that does not exist (eg, /colors/blargh), I am redirected to the colors index page. 
+	// const history = useHistory()
+	// if (!selectedColor) {
+	// 	history.push("/colors")
+	// }
 	return (
 		<div className="Color-Wrapper" >
 			<h2 className="Color-Name">{selectedColor.name}</h2>
