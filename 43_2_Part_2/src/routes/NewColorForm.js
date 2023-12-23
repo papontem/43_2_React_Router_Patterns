@@ -1,5 +1,6 @@
 // NewColorForm.js
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 // component to display form to add a new color to colors list
 function NewColorForm(props) {
@@ -8,6 +9,9 @@ function NewColorForm(props) {
 
 	const { addColor } = props;
 	// console.log("addColor:", addColor);
+
+    const history = useHistory()
+    console.log("history:", history);
 
 	// State for form data
 	// width, height, and background color for a new box.
@@ -44,7 +48,8 @@ function NewColorForm(props) {
 
 		// Now step 4 As a user, when I submit my new color form, I am redirected to the colors index, and my new color appears at the top.
 
-        // redirect back
+        // redirect to colors
+        history.push("/colors")
 	};
 	return (
 		<div className="NewColorForm-Wrapper">

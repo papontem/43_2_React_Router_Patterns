@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function ColorList(props) {
 	const { colorList } = props;
-	console.log("Color List:", colorList);
+	// console.log("Color List:", colorList);
 
 
 	let reversedColorList = [...colorList].reverse()
