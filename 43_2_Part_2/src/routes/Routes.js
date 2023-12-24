@@ -14,7 +14,7 @@ function Routes(props) {
 	// created a callback to check for me if color is real
 	const colorExists = (colorName) => {
 		// check if the color exists in the colorList
-		return colorList.some((color) => color.name === colorName);
+		return colorList.some((color) => color.name.toLowerCase() === colorName.toLowerCase());
 	  };
 
 	return (
@@ -28,6 +28,7 @@ function Routes(props) {
 
 			<Route exact path="/colors/:colorName">
 				{({ match }) => {
+					// console.log("Match: ",match); 
 					const { colorName } = match.params;
 
 					// check if the colorName param exists in our coloList and if it does not redirect to colors
